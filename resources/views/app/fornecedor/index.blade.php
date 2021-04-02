@@ -12,12 +12,12 @@
     <br/>
     Status: {{ $fornecedores[0]['status'] }}
     <br/>
-    @if(!($fornecedores[0]['status'] == 'S'))
-        Fornecedor Inativo
-    @endif
+    @isset($fornecedores[0]['cnpj'])
+        CNPJ: {{ $fornecedores[0]['cnpj'] }}
+        @empty($fornecedores[0]['cnpj'])
+        - Vazio
+        @endempty
+    @endisset
     <br/>
-    @unless($fornecedores[0]['status'] == 'S')
-        Fornecedor Inativo
-    @endunless
 @endisset
 <br/>
