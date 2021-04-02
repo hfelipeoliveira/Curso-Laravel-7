@@ -10,7 +10,11 @@ class FornecedorController extends Controller
         $fornecedores = [
             0 => ['nome' => 'Fornecedor 1', 
             'status' => 'N',
-            'cnpj' => ''
+            'cnpj' => '0'
+        ],
+        1 => ['nome' => 'Fornecedor 2', 
+            'status' => '2',
+            'cnpj' => '123'
             ]
         ];
         return view('app.fornecedor.index', compact('fornecedores'));
