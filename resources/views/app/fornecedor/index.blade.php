@@ -9,16 +9,16 @@
 
 @isset($fornecedores)
 
-    @for($i = 0; isset($fornecedores[$i]); $i++)
-    Fornecedor: {{ $fornecedores[$i]['nome'] }}
+    @foreach($fornecedores as $indice => $fornecedor)
+    Fornecedor: {{ $fornecedor['nome'] }}
     <br/>
-    Status: {{ $fornecedores[$i]['status'] }}
+    Status: {{ $fornecedor['status'] }}
     <br/>
-    CNPJ: {{ $fornecedores[$i]['cnpj'] ?? 'Dado não preenchido' }}
+    CNPJ: {{ $fornecedor['cnpj'] ?? 'Dado não preenchido' }}
     <br/>
-    Telefone: ({{ $fornecedores[$i]['ddd'] ?? '' }}) {{ $fornecedores[0]['telefone'] ?? '' }}
+    Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? '' }}
     <hr>
-    @endfor
+    @endforeach
 
 @endisset
 <br/>
